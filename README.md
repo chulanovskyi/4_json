@@ -9,12 +9,12 @@ For example a list of bars in JSON format can be downloaded directly from http:/
 This script simply help you to print out all data from file in readable format.
 
 Script takes one required and one optional parameters: 
-- name - JSON file name;
-- -l or --limiter (optional) - limits the number of records to be printed;
+- `name` - JSON file name;
+- `-l` or `--limiter` (optional) - limits the number of records to be printed;
 
 ###How to use:
 
 | Command | Description |
 | --- | --- |
-| pprint_json.py my_file_name.json | print out all data from file |
-| pprint_json.py my_file_name.json -l=5 | print first 5 records from file |
+| `pprint_json.py my_file_name.json` | print out all data from file |
+| `pprint_json.py my_file_name.json -l=5` | print first 5 records from file |
