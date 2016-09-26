@@ -1,24 +1,31 @@
 import json
 import pprint
+import argparse
+import sys
 
 
 def load_data(filepath):
-    with open(filepath, encoding='utf8') as file:
-        ugly_json_file = json.loads(file.read())
+    with open(filepath, encoding='utf8') as json_file:
+        ugly_json_file = json.load(json_file)
     return ugly_json_file
 
 
-def pretty_print_json(data, max_len=0):
-    if max_len:
-        pprint.pprint(data[:max_len])
+def create_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('name')
+    parser.add_argument('-l', '--limiter', type=int)
+    return parser
+
+
+def pretty_print_json(data, limiter=None):
+    if limiter:
+        pprint.pprint(data[:limiter])
     else:
         pprint.pprint(data)
 
 
 if __name__ == '__main__':
-    data = load_data('Bars.json')
-    '''
-    Because file "Bars.json" have many nesting records,
-    you can use second argument as a limiter for records to be printed
-    '''
-    pretty_print_json(data, 5)
+    parser = create_parser()
+    params = parser.parse_args()
+    data = load_data(params.name)
+    pretty_print_json(data, params.limiter)
