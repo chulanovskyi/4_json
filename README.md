@@ -12,8 +12,9 @@ Script takes one required and one optional parameters:
 - name - JSON file name;
 - -l or --limiter (optional) - limits the number of records to be printed;
 
-How to use:
+###How to use:
 
-|Command|Description|
-|pprint_json.py my_file_name.json|print out all data from file.|
-|pprint_json.py my_file_name.json -l=5|print first 5 records from file|
+| Command | Description |
+| --- | --- |
+| pprint_json.py my_file_name.json | print out all data from file |
+| pprint_json.py my_file_name.json -l=5 | print first 5 records from file |
